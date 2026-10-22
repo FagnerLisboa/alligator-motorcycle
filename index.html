@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacaré Moto Radical</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ARCADE • CORRIDA MALUCA</p>
+        <h1>🐊 Jacaré Moto Radical</h1>
+      </div>
+      <div class="hud">
+        <div class="stat"><span>PONTOS</span><strong id="score">0</strong></div>
+        <div class="stat"><span>RECORDE</span><strong id="best">0</strong></div>
+        <div class="stat"><span>VELOCIDADE</span><strong id="speed">1x</strong></div>
+      </div>
+    </header>
+
+    <section class="game-area" aria-label="Área do jogo">
+      <canvas id="game" width="480" height="720" aria-label="Jogo Jacaré Moto Radical"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-card">
+          <div class="big-emoji" id="overlayEmoji">🐊</div>
+          <h2 id="overlayTitle">Prepare-se para acelerar!</h2>
+          <p id="overlayText">Desvie dos obstáculos com seu jacaré motorizado. Piloto e garupa estão prontos?</p>
+          <button id="startBtn">COMEÇAR A CORRIDA</button>
+          <small>← → ou A / D para pilotar</small>
+        </div>
+      </div>
+    </section>
+
+    <nav class="mobile-controls" aria-label="Controles para celular">
+      <button id="leftBtn" aria-label="Mover para esquerda">◀</button>
+      <span>VIRE PARA DESVIAR</span>
+      <button id="rightBtn" aria-label="Mover para direita">▶</button>
+    </nav>
+    <footer>
+      <span>Desvie dos obstáculos e tente bater seu recorde!</span>
+      <span class="legend"><i></i> Jacaré + piloto + garupa</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
