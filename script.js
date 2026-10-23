@@ -327,7 +327,7 @@
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(tilt);
-    const spriteW = 135;
+    const spriteW = 125;
     const spriteH = spriteW * (408 / 300);
     if (motoSprite.complete && motoSprite.naturalWidth > 0) {
       ctx.drawImage(motoSprite, -spriteW / 2, -spriteH / 2, spriteW, spriteH);
