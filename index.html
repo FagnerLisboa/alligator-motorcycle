@@ -12,10 +12,12 @@
 <body>
 <main class="shell">
   <header class="header">
-    <div><div class="eyebrow">CORRIDA ARCADE</div><h1>🐊 Jacaré Moto Radical</h1></div>
+    <div class="brand"><div class="eyebrow">CORRIDA ARCADE</div><h1>🐊 Jacaré Moto Radical</h1></div>
     <div class="hud">
       <div class="stat"><small>PONTOS</small><b id="score">0</b></div>
       <div class="stat coin-stat"><small>🪙 MOEDAS</small><b id="coins">0</b></div>
+      <div class="stat lives-stat"><small>VIDAS</small><b id="lives" aria-label="3 vidas">❤️❤️❤️</b></div>
+      <div class="stat fruit-stat"><small>🍓 FRUTINHAS</small><b id="fruitCount">0/3</b><span id="skillStatus">Junte 3 para ativar</span></div>
       <div class="stat"><small>RECORDE</small><b id="best">0</b></div>
       <div class="stat"><small>VELOCIDADE</small><b id="speed">1.0x</b></div>
     </div>
@@ -38,9 +40,63 @@
       <span>TOQUE PARA DESVIAR</span>
       <button id="right" aria-label="Virar à direita">▶</button>
     </nav>
-    <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false">🔊 Som ligado</button>
+    <div class="utility-buttons">
+      <button id="shopToggle" class="shop-toggle" type="button">🛒 LOJA</button>
+      <div id="skill-effect-label" class="skill-effect-label" aria-live="polite">🍓 Frutinhas: 0/3</div>
+      <div class="skill-choices" aria-label="Escolha uma habilidade">
+        <button class="skill-choice" data-skill="shield" type="button" disabled>🛡️ Escudo</button>
+        <button class="skill-choice" data-skill="speed" type="button" disabled>⚡ Supervelocidade</button>
+        <button class="skill-choice" data-skill="magnet" type="button" disabled>🧲 Ímã</button>
+      </div>
+      <button id="musicToggle" class="sound-toggle music-toggle" type="button" aria-pressed="true">🎵 Música ligada</button>
+      <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="true">🔊 Efeitos ligados</button>
+    </div>
   </div>
-  <footer>Desvie dos carros, pedras e cones. Pegue moedas douradas para ganhar pontos extras!</footer>
+  <section id="shopPanel" class="shop-panel" hidden aria-label="Loja de personalização">
+    <div class="shop-heading">
+      <div><span class="shop-kicker">GARAGEM DO JACARÉ</span><h2>Personalize sua corrida</h2></div>
+      <div class="wallet">🪙 <b id="walletCoins">0</b></div>
+    </div>
+    <p class="shop-description">Use as moedas coletadas para desbloquear rastros de velocidade. Suas moedas e compras ficam salvas neste navegador.</p>
+    <div class="shop-items">
+      <article class="shop-item">
+        <div class="trail-preview trail-green"><span>〰</span></div>
+        <h3>Rastro Radical</h3><p>Verde-limão</p>
+        <button class="shop-item-button" data-skin="green" type="button">EQUIPADO</button>
+      </article>
+      <article class="shop-item">
+        <div class="trail-preview trail-gold"><span>〰</span></div>
+        <h3>Rastro Dourado</h3><p>Brilho de ouro</p>
+        <button class="shop-item-button" data-skin="gold" data-cost="20" type="button">🪙 20</button>
+      </article>
+      <article class="shop-item">
+        <div class="trail-preview trail-purple"><span>〰</span></div>
+        <h3>Rastro Neon</h3><p>Roxo elétrico</p>
+        <button class="shop-item-button" data-skin="purple" data-cost="50" type="button">🪙 50</button>
+      </article>
+    </div>
+    <div class="garage-divider"><span>VISUAL DA MOTO</span></div>
+    <div class="bike-items">
+      <article class="shop-item bike-item">
+        <div class="bike-preview bike-original"><span>🐊</span><small>ORIGINAL</small></div>
+        <h3>Jacaré Clássico</h3><p>Visual original</p>
+        <button class="bike-item-button" data-bike="classic" type="button">EQUIPADO</button>
+      </article>
+      <article class="shop-item bike-item">
+        <div class="bike-preview bike-sunset"><span>🐊</span><small>POR DO SOL</small></div>
+        <h3>Jacaré Solar</h3><p>Estilo laranja</p>
+        <button class="bike-item-button" data-bike="sunset" data-cost="75" type="button">🪙 75</button>
+      </article>
+      <article class="shop-item bike-item">
+        <div class="bike-preview bike-arctic"><span>🐊</span><small>GELO</small></div>
+        <h3>Jacaré Glacial</h3><p>Estilo azul</p>
+        <button class="bike-item-button" data-bike="arctic" data-cost="100" type="button">🪙 100</button>
+      </article>
+    </div>
+    <p class="shop-note">Os modelos alternativos mudam o acabamento visual da moto sem substituir a imagem original.</p>
+    <p id="shopMessage" class="shop-message" aria-live="polite">Colete moedas na corrida para liberar novos itens.</p>
+  </section>
+  <footer>DESVIE DOS OBSTÁCULOS • COLETE MOEDAS • SUPERE SEU RECORDE</footer>
 </main>
 <script src="js/game.js" defer></script>
 </body>
