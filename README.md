@@ -62,3 +62,11 @@ O indicador da interface anuncia a transformação ativa.
 - Botão separado para ligar/desligar a música.
 - Efeitos sonoros continuam com controle independente.
 - Não precisa baixar MP3 nem usar serviço externo; o áudio começa após clicar para iniciar a corrida.
+
+
+## Versão 11 — açaí, vidas e ativação de habilidade
+- Açaís aparecem durante a corrida.
+- Cada 3 açaís concedem +1 vida, até o limite de 5 vidas.
+- As frutinhas continuam liberando os poderes especiais.
+- O jogador escolhe Escudo, Supervelocidade ou Ímã e aperta o botão “Ativar habilidade”.
+- Música arcade e controles de som continuam disponíveis.

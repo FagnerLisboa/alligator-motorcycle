@@ -182,3 +182,40 @@ footer { padding:11px 4px 0; color:#84998a; text-align:center; font-size:10px; l
   border-color: rgba(255, 211, 89, .65);
   background: linear-gradient(135deg, #584214, #302713);
 }
+
+
+/* Açaí, seleção do poder e botão de ativação */
+.acai-stat span {
+  display: block;
+  color: #d9b7ff;
+  font-size: .68rem;
+  line-height: 1.2;
+  margin-top: 3px;
+}
+.skill-choice.skill-selected {
+  border-color: #ffd45a;
+  box-shadow: 0 0 0 2px rgba(255, 212, 90, .22), 0 0 16px rgba(255, 212, 90, .25);
+}
+.activate-skill {
+  display: block;
+  width: min(100%, 360px);
+  margin: .55rem auto .25rem;
+  padding: .8rem 1rem;
+  border: 1px solid #b9f56a;
+  border-radius: 12px;
+  color: #14220d;
+  background: linear-gradient(135deg, #d9ff7a, #8ce65b);
+  font-weight: 900;
+  letter-spacing: .035em;
+  box-shadow: 0 5px 18px rgba(139, 230, 91, .18);
+  cursor: pointer;
+}
+.activate-skill:disabled {
+  opacity: .48;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+@media (max-width: 520px) {
+  .activate-skill { width: 100%; font-size: .82rem; }
+  .acai-stat span { font-size: .62rem; }
+}
