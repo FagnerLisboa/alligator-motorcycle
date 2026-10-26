@@ -4,7 +4,7 @@
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
   const motoSprite = new Image();
-  motoSprite.src = "moto-original.png";
+  motoSprite.src = "assets/moto-original.png";
   const scoreEl = document.getElementById("score");
   const coinsEl = document.getElementById("coins");
   const bestEl = document.getElementById("best");
@@ -20,7 +20,12 @@
     H = canvas.height;
   const road = { x: 70, width: 340 };
   const lanes = [126, 240, 354];
-  let best = Number(localStorage.getItem("jacareMotoBest") || 0);
+  let best = 0;
+  try {
+    best = Number(localStorage.getItem("jacareMotoBest") || 0);
+  } catch {
+    best = 0;
+  }
   let score = 0,
     coinsCollected = 0,
     speed = 260,
