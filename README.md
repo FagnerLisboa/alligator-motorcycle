@@ -70,3 +70,11 @@ O indicador da interface anuncia a transformação ativa.
 - As frutinhas continuam liberando os poderes especiais.
 - O jogador escolhe Escudo, Supervelocidade ou Ímã e aperta o botão “Ativar habilidade”.
 - Música arcade e controles de som continuam disponíveis.
+
+
+## Versão 13 — Responsividade
+- Ajustes para celular estreito, tablet e celular na horizontal.
+- HUD com cartões flexíveis e tipografia adaptável.
+- Controles de toque maiores e botão de habilidade centralizado sem estourar a largura.
+- Loja e seletores de habilidades reorganizados para telas pequenas.
+- Respeito às áreas seguras do celular e prevenção de rolagem horizontal.

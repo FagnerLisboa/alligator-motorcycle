@@ -220,3 +220,138 @@ footer { padding:11px 4px 0; color:#84998a; text-align:center; font-size:10px; l
   .activate-skill { width: auto; font-size: .68rem; line-height: 1.2; padding: .65rem .3rem; }
   .acai-stat span { font-size: .62rem; }
 }
+
+
+
+/* V13 — ajustes responsivos para celular, tablet e telas baixas */
+html {
+  width: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+.shell,
+.header,
+.brand,
+.stage,
+.controls,
+.utility-buttons,
+.shop-panel {
+  min-width: 0;
+  max-width: 100%;
+}
+canvas {
+  max-width: 100%;
+}
+button {
+  min-width: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile button,
+.activate-skill,
+.skill-choice,
+.sound-toggle,
+.shop-toggle,
+.shop-item-button,
+.bike-item-button {
+  touch-action: manipulation;
+}
+
+/* Tablets e janelas médias: HUD e ações podem quebrar linha sem apertar */
+@media (min-width: 661px) and (max-width: 900px) {
+  body { padding: 18px; }
+  .shell { width: min(100%, 760px); }
+  .header { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .hud { width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .utility-buttons { display: flex; flex-wrap: wrap; justify-content: center; }
+  .skill-choices { flex: 1 1 100%; justify-content: center; }
+}
+
+/* Celulares */
+@media (max-width: 660px) {
+  body {
+    display: block;
+    padding: max(8px, env(safe-area-inset-top)) 10px max(12px, env(safe-area-inset-bottom));
+  }
+  .shell { width: 100%; margin: 0 auto; }
+  .header { gap: 10px; margin-bottom: 10px; }
+  .eyebrow { font-size: 9px; letter-spacing: 1.7px; margin-bottom: 5px; }
+  h1 { max-width: 100%; font-size: clamp(22px, 6vw, 30px); letter-spacing: -1px; }
+  .hud { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .stat { padding: 7px 3px; min-width: 0; border-radius: 9px; }
+  .stat small { font-size: clamp(7px, 2vw, 9px); letter-spacing: 0; line-height: 1.2; }
+  .stat b { font-size: clamp(13px, 3.8vw, 17px); overflow-wrap: anywhere; }
+  .lives-stat strong { font-size: clamp(10px, 3vw, 13px); }
+  .fruit-stat, .acai-stat { min-width: 0; }
+  .fruit-stat b { font-size: clamp(11px, 3.2vw, 14px); }
+  .fruit-stat span, .acai-stat span { font-size: clamp(6px, 1.8vw, 8px); overflow-wrap: anywhere; }
+  .stage { width: 100%; border-radius: 13px; }
+  canvas { width: 100%; height: auto; aspect-ratio: 2 / 3; }
+  .overlay { padding: 12px; }
+  .dialog { width: min(100%, 340px); padding: clamp(15px, 5vw, 22px); border-radius: 18px; }
+  .dialog p { margin-bottom: 14px; font-size: 12px; }
+  .dialog small { margin-top: 12px; }
+  .controls { width: 100%; }
+  .mobile { display: grid; grid-template-columns: minmax(48px, 64px) minmax(0, 1fr) minmax(48px, 64px); gap: 8px; padding: 10px 0 8px; }
+  .mobile button { width: 100%; min-width: 0; height: 50px; padding: 6px 3px; border-radius: 12px; }
+  .activate-skill { max-width: none; font-size: clamp(10px, 2.7vw, 12px) !important; line-height: 1.15 !important; padding: 8px 4px !important; overflow-wrap: anywhere; }
+  .utility-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%; }
+  .utility-buttons > button { min-height: 42px; }
+  .utility-buttons .shop-toggle,
+  .utility-buttons .sound-toggle { flex: 1 1 calc(50% - 8px); white-space: normal; padding: 10px 8px; font-size: 10px; }
+  .skill-effect-label { flex: 1 1 100%; order: 2; margin: 2px 0; font-size: 12px; }
+  .skill-choices { order: 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: 100%; }
+  .skill-choice { width: 100%; min-height: 42px; white-space: normal; overflow-wrap: anywhere; padding: 8px 4px; font-size: clamp(8px, 2.3vw, 10px); line-height: 1.15; }
+  .music-toggle { order: 4; }
+  #soundToggle { order: 5; }
+  .shop-panel { margin-top: 12px; padding: 13px; border-radius: 15px; }
+  .shop-heading { align-items: flex-start; }
+  .wallet { padding: 8px; font-size: 12px; }
+  .shop-description { font-size: 12px; }
+  .shop-items, .bike-items { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .shop-item { padding: 7px 5px; border-radius: 11px; }
+  .trail-preview { height: 44px; font-size: 30px; }
+  .bike-preview { height: 44px; }
+  .shop-item h3, .bike-item h3 { font-size: 10px; line-height: 1.2; overflow-wrap: anywhere; }
+  .shop-item p, .bike-item p { min-height: 2.4em; font-size: 9px; line-height: 1.25; overflow-wrap: anywhere; }
+  .shop-item-button, .bike-item-button { min-height: 38px; padding: 7px 3px; font-size: 8px; white-space: normal; overflow-wrap: anywhere; }
+  footer { padding: 12px 4px 4px; font-size: 9px; }
+}
+
+/* Telefones estreitos, inclusive 320–360px */
+@media (max-width: 380px) {
+  body { padding-left: 7px; padding-right: 7px; }
+  .hud { gap: 4px; }
+  .stat { padding-left: 2px; padding-right: 2px; }
+  .mobile { grid-template-columns: 48px minmax(0, 1fr) 48px; gap: 5px; }
+  .mobile button { height: 46px; }
+  .activate-skill { letter-spacing: 0; }
+  .utility-buttons { gap: 6px; }
+  .shop-items, .bike-items { gap: 4px; }
+  .shop-item { padding: 6px 4px; }
+}
+
+/* Celular deitado: aproveitar a altura sem cortar o jogo */
+@media (max-width: 900px) and (orientation: landscape) {
+  body { align-items: flex-start; padding: 8px 12px; }
+  .shell { width: min(100%, 900px); }
+  .header { flex-direction: row; align-items: center; gap: 12px; }
+  .brand { flex: 0 1 32%; }
+  h1 { font-size: clamp(18px, 3vw, 26px); }
+  .hud { flex: 1 1 auto; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+  .stat { padding: 5px 3px; }
+  .stage { max-width: min(54vh, 420px); margin: 0 auto; }
+  .mobile { max-width: min(54vh, 420px); margin: 0 auto; }
+  .utility-buttons { justify-content: center; }
+}
+
+/* Evita que animações aumentem o layout em aparelhos com preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .skill-button.skill-ready,
+  .skill-choice.skill-ready,
+  .skill-effect-label.active { animation: none !important; }
+}
